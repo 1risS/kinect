@@ -9,8 +9,8 @@
 	<body>
 
 		<video id="video" loop muted crossorigin="anonymous" playsinline style="display:none">
-			<source src="textures/kinect.webm">
-			<source src="textures/kinect.mp4">
+			<source src="textures/examples_textures_kinect.webm">
+			<!-- <source src="textures/kinect.mp4"> -->
 		</video>
 
 		<script id="vs" type="x-shader/x-vertex">
@@ -62,7 +62,9 @@
 			void main() {
 
 				vec4 color = texture2D( map, vUv );
-				gl_FragColor = vec4( color.r, color.g, color.b, 0.2 );
+				gl_FragColor = vec4( color.r, color.g, color.b, 0.8 );
+
+			
 
 			}
 
@@ -75,7 +77,7 @@
 		<script type="importmap">
 			{
 				"imports": {
-					"three": "../build/three.module.js"
+					"three": "./build/three.module.js"
 				}
 			}
 		</script>
@@ -84,7 +86,7 @@
 
 			import * as THREE from 'three';
 
-			import { GUI } from './jsm/libs/lil-gui.module.min.js';
+			import { GUI } from './gui/lil-gui.module.min.js';
 
 			let scene, camera, renderer;
 			let geometry, mesh, material;
